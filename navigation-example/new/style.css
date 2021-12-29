@@ -1,0 +1,78 @@
+header{
+    --border-width: 5px;
+}
+
+.nav-list{
+    border: var(--border-width) solid hsl(var(--clr-orange) / 0.5);
+    /* Additions */
+    display: flex; /* Converts to flex display */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 1rem;
+    flex-wrap: wrap; /* Items are allowed to wrap*/
+
+}
+
+.nav-list > li{
+    border: var(--border-width) solid hsl(var(--clr-green) / 0.5);
+    /* Additions */
+    /*display: inline;
+    display: block; These lines are useless after we declared flexbox*/ 
+    width: max-content; /* Make the content have biggest size that it can have, by preventing wrappings */
+    flex-shrink: 1; /* It's 1 by default. If we set it zero, it won't shrink once parent got shorten */
+    flex-grow: 1; /* Allows elements to grow if there is some space*/
+}
+
+.info{
+    font-size: 1.5rem;
+    margin-top: max(3rem, 10vh);
+}
+
+.dot{
+    padding: 0.25rem;
+    width: 0;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.orange{
+    background: hsl(var(--clr-orange));
+}
+
+.green{
+    background: hsl(var(--clr-green));
+}
+
+header{
+    margin-block: 3rem;
+}
+
+:root{
+    --clr-orange: 7 100% 63%;
+    --clr-blue: 239 100% 50%;
+    --clr-green: 125 50% 50%;
+    --spacer: 2rem;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    padding: var(--spacer);
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+}
+
+h1{
+    margin-bottom: 1em;
+    font-size: clamp(2rem, 5vw + 1rem, 4rem);
+    color: hsl(var(--clr-orange));
+    text-shadow: 0.05em 0.05em 0 hsl(0 0% 0% / 0.7);
+}
